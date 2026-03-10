@@ -48,7 +48,6 @@ nav {
 }
 
 
-
 .nav-logo span { color: var(--green); }
 
 .nav-links {
@@ -69,7 +68,13 @@ nav {
   position: relative;
 }
 
-.nav-links a:hover, .nav-links a.active { color:#ffa846; }
+/* .nav-links a:hover, .nav-links a.active { color:#ffa846; } */
+
+.nav-links a.active {
+  color: #FFF8F0;
+  border-bottom: 2px solid #C08552;
+  padding-bottom: 4px;
+}
 
 .nav-links a.active::after {
   content: '';
