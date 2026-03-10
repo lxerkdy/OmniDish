@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Про нас — EcoChef</title>
+  <title>Про нас — EcoDish</title>
   <link rel="stylesheet" href="style.css">
   <style>
     /* PAGE HERO */
@@ -23,7 +23,7 @@
     }
 
     .page-hero h1 { margin-bottom: 24px; }
-    .page-hero h1 em { color: var(--orange); font-style: normal; }
+    .page-hero h1 em { color: var(--accent); font-style: normal; }
     .page-hero p { font-size: 1.05rem; line-height: 1.8; }
 
     .page-hero-meta {
@@ -33,7 +33,7 @@
     }
 
     .meta-item {
-      border-left: 2px solid var(--orange);
+      border-left: 2px solid var(--accent);
       padding-left: 24px;
     }
 
@@ -84,11 +84,11 @@
       position: absolute;
       bottom: 0; left: 0; right: 0;
       height: 4px;
-      background: linear-gradient(90deg, var(--orange), var(--green));
+      background: linear-gradient(90deg, var(--accent), var(--secondary));
     }
 
     .mission-text h2 { margin-bottom: 20px; }
-    .mission-text p { margin-bottom: 20px; }
+    .mission-text p { margin-bottom: 20px; color: var(--text-muted);}
 
     .values-list {
       list-style: none;
@@ -108,7 +108,7 @@
 
     .values-list li::before {
       content: '—';
-      color: var(--orange);
+      color: var(--accent);
       flex-shrink: 0;
       margin-top: 1px;
     }
@@ -180,10 +180,10 @@
       color: var(--white);
     }
 
-    .team-avatar.orange { background: var(--orange); }
-    .team-avatar.green { background: var(--green); }
-    .team-avatar.orange-light { background: var(--orange-light); }
-    .team-avatar.green-light { background: var(--green-light); }
+    .team-avatar.orange { background: var(--accent); }
+    .team-avatar.green { background: var(--secondary); }
+    .team-avatar.orange-light { background: #8C5A3C; }
+    .team-avatar.green-light { background: #6B4E3D; }
 
     .team-info { padding: 24px; }
     .team-info h3 { font-size: 1rem; margin-bottom: 4px; }
@@ -192,7 +192,7 @@
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: var(--orange);
+      color: var(--accent);
       margin-bottom: 12px;
     }
     .team-info p { font-size: 0.85rem; line-height: 1.65; }
@@ -227,7 +227,7 @@
 <body>
 
 <nav>
-  <a href="index.html" class="nav-logo">Eco<span>Chef</span></a>
+  <a href="index.html" class="nav-logo">Omni<span>Dish</span></a>
   <ul class="nav-links">
     <li><a href="index.html">Головна</a></li>
     <li><a href="about.html" class="active">Про нас</a></li>
@@ -242,7 +242,7 @@
   <div class="page-hero">
     <div class="page-hero-inner">
       <div>
-        <div class="section-label">Про EcoChef</div>
+        <div class="section-label">Про OmniDish</div>
         <h1>Технології на службі <em>кожного холодильника</em></h1>
         <p>Ми віримо, що штучний інтелект здатен вирішувати не лише бізнес-задачі, а й буденні проблеми кожного — починаючи з того, що приготувати на вечерю.</p>
       </div>
@@ -272,7 +272,7 @@
       </div>
       <div class="mission-text">
         <h2>Зменшити харчові відходи. Глобально.</h2>
-        <p>Щороку у світі викидається третина всіх вироблених продуктів. EcoChef ставить за мету змінити цю звичку — по одному холодильнику.</p>
+        <p>Щороку у світі викидається третина всіх вироблених продуктів. OmniDish ставить за мету змінити цю звичку — по одному холодильнику.</p>
         <p>Ми навчаємо людей використовувати продукти ефективно, економно та креативно — не через нотації, а через зручний інструмент.</p>
         <ul class="values-list">
           <li>Доступність: безкоштовний базовий рівень для кожного</li>
@@ -295,7 +295,7 @@
           <p>Замість того, щоб просто скаржитись, ми вирішили побудувати рішення. Перший прототип був зроблений за один вікенд — і він вже розпізнавав яйця та помідори.</p>
         </div>
         <div>
-          <p>Сьогодні EcoChef — це повноцінна команда з чотирьох спеціалістів, що працює над мобільним додатком із реальним комп'ютерним зором і генерацією рецептів.</p>
+          <p>Сьогодні OmniDish — це повноцінна команда з чотирьох спеціалістів, що працює над мобільним додатком із реальним комп'ютерним зором і генерацією рецептів.</p>
           <p>Ми в Україні, і ми будуємо продукт, що актуальний тут і зараз — коли важливо витрачати ресурси розумно.</p>
         </div>
       </div>
@@ -309,64 +309,61 @@
       <h2>Люди за проєктом</h2>
       <div class="divider"></div>
     </div>
-    <div class="team-grid">
 
-      <div class="team-card">
-        <div class="team-avatar orange">
-          <span class="team-avatar-initials">А</span>
-        </div>
-        <div class="team-info">
-          <h3>Андрій</h3>
-          <div class="team-role">CEO & Product Manager</div>
-          <p>Ідеолог проєкту. Досліджує ринок, спілкується з користувачами та формує стратегію розвитку.</p>
-          <span class="team-exp">4 роки · ресторани & стартапи</span>
-        </div>
-      </div>
-
-      <div class="team-card">
-        <div class="team-avatar green">
-          <span class="team-avatar-initials">С</span>
-        </div>
-        <div class="team-info">
-          <h3>Софія</h3>
-          <div class="team-role">AI / Computer Vision Engineer</div>
-          <p>Відповідає за "магію" — навчає нейромережу розпізнавати продукти навіть у поганому освітленні.</p>
-          <span class="team-exp">3 роки · computer vision</span>
-        </div>
-      </div>
-
-      <div class="team-card">
-        <div class="team-avatar orange-light">
-          <span class="team-avatar-initials">Д</span>
-        </div>
-        <div class="team-info">
-          <h3>Данило</h3>
-          <div class="team-role">Mobile App Developer</div>
-          <p>Будує швидкий і стабільний додаток для iOS та Android на Flutter, інтегрує бази даних рецептів.</p>
-          <span class="team-exp">4 роки · Flutter / Dart</span>
-        </div>
-      </div>
-
-      <div class="team-card">
-        <div class="team-avatar green-light">
-          <span class="team-avatar-initials">В</span>
-        </div>
-        <div class="team-info">
-          <h3>Вікторія</h3>
-          <div class="team-role">UX/UI Designer & Content</div>
-          <p>Робить інтерфейс "апетитним" і зручним. Відповідає за фуд-фотографію та подачу рецептів.</p>
-          <span class="team-exp">3 роки · UX + фуд-фото</span>
-        </div>
-      </div>
-
+<div class="team-grid">
+  <div class="team-card">
+    <div class="team-avatar orange">
+      <span class="team-avatar-initials">О</span>
     </div>
+    <div class="team-info">
+      <h3>Петро</h3>
+      <div class="team-role">CEO & Product Manager</div>
+      <p>Ідеолог проєкту. Досліджує ринок, спілкується з користувачами та формує стратегію розвитку.</p>
+      <span class="team-exp">4 роки · ресторани & стартапи</span>
+    </div>
+  </div>
+  <div class="team-card">
+    <div class="team-avatar green">
+      <span class="team-avatar-initials">В</span>
+    </div>
+    <div class="team-info">
+      <h3>Олександр</h3>
+      <div class="team-role">AI / Computer Vision Engineer</div>
+      <p>Відповідає за "магію" — навчає нейромережу розпізнавати продукти навіть у поганому освітленні.</p>
+      <span class="team-exp">3 роки · computer vision</span>
+    </div>
+  </div>
+  <div class="team-card">
+    <div class="team-avatar orange-light">
+      <span class="team-avatar-initials">П</span>
+    </div>
+    <div class="team-info">
+      <h3>Василь</h3>
+      <div class="team-role">Mobile App Developer</div>
+      <p>Будує швидкий і стабільний додаток для iOS та Android на Flutter, інтегрує бази даних рецептів.</p>
+      <span class="team-exp">4 роки · Flutter / Dart</span>
+    </div>
+  </div>
+  <div class="team-card">
+    <div class="team-avatar green-light">
+      <span class="team-avatar-initials">В</span>
+    </div>
+    <div class="team-info">
+      <h3>Вікторія</h3>
+      <div class="team-role">UX/UI Designer & Content</div>
+      <p>Робить інтерфейс "апетитним" і зручним. Відповідає за фуд-фотографію та подачу рецептів.</p>
+      <span class="team-exp">3 роки · UX + фуд-фото</span>
+    </div>
+  </div>
+</div>
+
   </div>
 
 </main>
 
 <footer>
-  <span class="footer-logo">Eco<span>Chef</span></span>
-  <p>© 2025 EcoChef. Готуй смачно. Не викидай зайвого.</p>
+  <span class="footer-logo">Omni<span>Dish</span></span>
+  <p>© 2025 OmniDish. Готуй смачно. Не викидай зайвого.</p>
 </footer>
 
 </body>
