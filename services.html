@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Послуги — EcoChef</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-hero {
+      background: var(--cream-dark);
+      padding: 96px 80px 80px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .page-hero h1 { margin-top: 16px; max-width: 640px; }
+    .page-hero h1 em { color: var(--orange); font-style: normal; }
+    .page-hero p { margin-top: 24px; max-width: 560px; font-size: 1.05rem; }
+
+    /* SERVICES MAIN */
+    .services-main {
+      padding: 96px 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .service-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      padding: 64px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .service-block:last-child { border-bottom: none; }
+
+    .service-block.reverse { direction: rtl; }
+    .service-block.reverse > * { direction: ltr; }
+
+    .service-visual {
+      height: 320px;
+      background: var(--cream-dark);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-visual .icon-large {
+      font-size: 4rem;
+      opacity: 0.35;
+    }
+
+    .service-visual-stripe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px; height: 100%;
+      background: var(--orange);
+    }
+
+    .service-visual-stripe.green { background: var(--green); }
+
+    .service-num {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      color: var(--orange);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    .service-content h2 { margin-bottom: 20px; }
+    .service-content p { margin-bottom: 16px; }
+
+    .service-features {
+      list-style: none;
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .service-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .service-features li::before {
+      content: '✓';
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* PRICING / PLANS */
+    .plans-section {
+      background: var(--text);
+      padding: 96px 80px;
+    }
+
+    .plans-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .plans-section .section-label { color: var(--green-light); }
+    .plans-section h2 { color: var(--cream); margin-bottom: 16px; }
+    .plans-section > .plans-inner > p { color: rgba(250,247,242,0.5); margin-bottom: 64px; }
+
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .plan-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 40px;
+      transition: transform 0.25s, border-color 0.25s;
+    }
+
+    .plan-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--orange);
+    }
+
+    .plan-card.featured {
+      background: var(--orange);
+      border-color: var(--orange);
+    }
+
+    .plan-name {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(250,247,242,0.5);
+      margin-bottom: 12px;
+    }
+
+    .plan-card.featured .plan-name { color: rgba(255,255,255,0.75); }
+
+    .plan-price {
+      font-family: var(--font-display);
+      font-size: 2.8rem;
+      font-weight: 600;
+      color: var(--cream);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .plan-period {
+      font-size: 0.8rem;
+      color: rgba(250,247,242,0.4);
+      margin-bottom: 32px;
+    }
+
+    .plan-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    .plan-features li {
+      font-size: 0.875rem;
+      color: rgba(250,247,242,0.65);
+      display: flex;
+      gap: 10px;
+    }
+
+    .plan-features li::before { content: '—'; color: var(--orange); }
+    .plan-card.featured .plan-features li::before { color: rgba(255,255,255,0.6); }
+    .plan-card.featured .plan-features li { color: rgba(255,255,255,0.85); }
+
+    .btn-plan {
+      width: 100%;
+      text-align: center;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.25);
+      color: var(--cream);
+      padding: 14px;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-family: var(--font-body);
+      transition: all 0.2s;
+    }
+
+    .btn-plan:hover { background: rgba(255,255,255,0.08); }
+    .plan-card.featured .btn-plan {
+      background: var(--white);
+      color: var(--orange);
+      border-color: var(--white);
+    }
+
+    @media (max-width: 768px) {
+      .page-hero { padding: 64px 24px; }
+      .services-main { padding: 64px 24px; }
+      .service-block { grid-template-columns: 1fr; gap: 40px; }
+      .service-block.reverse { direction: ltr; }
+      .service-visual { height: 220px; }
+      .plans-section { padding: 64px 24px; }
+      .plans-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Eco<span>Chef</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Головна</a></li>
+    <li><a href="about.html">Про нас</a></li>
+    <li><a href="services.html" class="active">Послуги</a></li>
+    <li><a href="contacts.html">Контакти</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="section-label">Що ми пропонуємо</div>
+      <h1>Чотири інструменти для <em>розумного</em> готування</h1>
+      <p>Від розпізнавання продуктів до розумного списку покупок — EcoChef закриває весь цикл.</p>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <div class="services-main">
+
+    <div class="service-block">
+      <div class="service-visual">
+        <div class="service-visual-stripe"></div>
+        <span class="icon-large">📸</span>
+      </div>
+      <div class="service-content">
+        <div class="service-num">01 / Головна фіча</div>
+        <h2>ШІ-генератор рецептів</h2>
+        <p>Сфотографуй вміст холодильника — алгоритм Computer Vision розпізнає продукти та миттєво пропонує рецепти від швидких сніданків до ресторанних вечерь.</p>
+        <ul class="service-features">
+          <li>Розпізнавання до 200 видів продуктів</li>
+          <li>Врахування дієт: веган, без глютену, кето</li>
+          <li>Фільтр за часом приготування</li>
+          <li>Покрокові інструкції з фото</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="service-block reverse">
+      <div class="service-visual">
+        <div class="service-visual-stripe green"></div>
+        <span class="icon-large">⏱</span>
+      </div>
+      <div class="service-content">
+        <div class="service-num">02 / Трекер</div>
+        <h2>Трекер термінів придатності</h2>
+        <p>Додаток автоматично відстежує, що і коли закінчується, та надсилає нагадування. Жодного зіпсованого йогурту і викинутих грошей.</p>
+        <ul class="service-features">
+          <li>Push-сповіщення за 1–3 дні до закінчення</li>
+          <li>Пріоритизація рецептів за продуктами "на вихід"</li>
+          <li>Ручне та автоматичне додавання дат</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-visual">
+        <div class="service-visual-stripe"></div>
+        <span class="icon-large">🛒</span>
+      </div>
+      <div class="service-content">
+        <div class="service-num">03 / Планування</div>
+        <h2>Розумний список покупок</h2>
+        <p>Аналіз звичок і улюблених рецептів → автоматичний список лише з тих інгредієнтів, яких вам насправді бракує. Більше жодних зайвих покупок.</p>
+        <ul class="service-features">
+          <li>Інтеграція з поточним вмістом холодильника</li>
+          <li>Групування за категоріями продуктів</li>
+          <li>Спільний список для всієї родини</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="service-block reverse">
+      <div class="service-visual">
+        <div class="service-visual-stripe green"></div>
+        <span class="icon-large">🚚</span>
+      </div>
+      <div class="service-content">
+        <div class="service-num">04 / Партнерство</div>
+        <h2>Інтеграція з доставками</h2>
+        <p>Не вистачає одного інгредієнта для ідеальної страви? Замовте його в один клік через наших партнерів-супермаркетів без виходу з додатку.</p>
+        <ul class="service-features">
+          <li>Підключення до партнерських доставок</li>
+          <li>Найкраща ціна серед партнерів</li>
+          <li>Відстеження замовлення в реальному часі</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PLANS -->
+  <div class="plans-section">
+    <div class="plans-inner">
+      <div class="section-label">Тарифи</div>
+      <h2>Простий вибір</h2>
+      <p>Починай безкоштовно. Масштабуй за потребою.</p>
+      <div class="plans-grid">
+
+        <div class="plan-card">
+          <div class="plan-name">Базовий</div>
+          <div class="plan-price">Безкоштовно</div>
+          <div class="plan-period">назавжди</div>
+          <ul class="plan-features">
+            <li>5 рецептів на день</li>
+            <li>Трекер до 20 продуктів</li>
+            <li>Базові фільтри дієт</li>
+          </ul>
+          <button class="btn-plan">Почати безкоштовно</button>
+        </div>
+
+        <div class="plan-card featured">
+          <div class="plan-name">Pro</div>
+          <div class="plan-price">₴199</div>
+          <div class="plan-period">на місяць</div>
+          <ul class="plan-features">
+            <li>Необмежені рецепти</li>
+            <li>Повний трекер продуктів</li>
+            <li>Розумний список покупок</li>
+            <li>Інтеграція з доставками</li>
+          </ul>
+          <button class="btn-plan">Обрати Pro</button>
+        </div>
+
+        <div class="plan-card">
+          <div class="plan-name">Сім'я</div>
+          <div class="plan-price">₴349</div>
+          <div class="plan-period">на місяць · до 5 осіб</div>
+          <ul class="plan-features">
+            <li>Все з Pro</li>
+            <li>Спільний холодильник</li>
+            <li>Спільний список покупок</li>
+            <li>Профілі для кожного члена</li>
+          </ul>
+          <button class="btn-plan">Обрати Сімейний</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <span class="footer-logo">Eco<span>Chef</span></span>
+  <p>© 2025 EcoChef. Готуй смачно. Не викидай зайвого.</p>
+</footer>
+
+</body>
+</html>

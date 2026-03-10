@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакти — EcoChef</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contacts-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: calc(100vh - 64px);
+    }
+
+    /* LEFT PANEL */
+    .contacts-info {
+      background: var(--text);
+      padding: 96px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .contacts-info .section-label { color: var(--green-light); }
+    .contacts-info h1 { color: var(--cream); margin: 16px 0 32px; }
+
+    .contacts-info p {
+      color: rgba(250,247,242,0.55);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 56px;
+    }
+
+    .contact-items {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .contact-icon {
+      width: 44px; height: 44px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-item-text strong {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--orange);
+      margin-bottom: 4px;
+    }
+
+    .contact-item-text span {
+      color: rgba(250,247,242,0.7);
+      font-size: 0.95rem;
+    }
+
+    .contacts-divider {
+      width: 48px; height: 1px;
+      background: rgba(255,255,255,0.1);
+      margin: 48px 0;
+    }
+
+    .social-links { display: flex; gap: 12px; }
+    .social-link {
+      width: 40px; height: 40px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .social-link:hover {
+      background: var(--orange);
+      border-color: var(--orange);
+    }
+
+    /* RIGHT PANEL — FORM */
+    .contacts-form-panel {
+      background: var(--cream);
+      padding: 96px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .form-header {
+      margin-bottom: 48px;
+    }
+
+    .form-header .section-label { margin-bottom: 12px; }
+    .form-header h2 { margin-bottom: 12px; }
+    .form-header p { font-size: 0.925rem; }
+
+    .contact-form { max-width: 480px; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-submit-row {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-top: 8px;
+    }
+
+    .form-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* Success state */
+    .form-success {
+      display: none;
+      background: var(--white);
+      border: 1px solid var(--green);
+      padding: 24px 32px;
+      margin-top: 24px;
+      max-width: 480px;
+    }
+
+    .form-success p {
+      color: var(--green);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .contacts-layout { grid-template-columns: 1fr; }
+      .contacts-info { padding: 64px 24px; }
+      .contacts-form-panel { padding: 64px 24px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Eco<span>Chef</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Головна</a></li>
+    <li><a href="about.html">Про нас</a></li>
+    <li><a href="services.html">Послуги</a></li>
+    <li><a href="contacts.html" class="active">Контакти</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="contacts-layout">
+
+    <!-- LEFT: INFO -->
+    <div class="contacts-info">
+      <div class="section-label">Контакти</div>
+      <h1>Давай поговоримо</h1>
+      <p>Є питання, ідея або хочеш приєднатись до команди? Пишіть — відповімо швидко.</p>
+
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div class="contact-item-text">
+            <strong>Адреса</strong>
+            <span>вул. Гастрономічна, 12, Київ, Україна</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div class="contact-item-text">
+            <strong>Телефон</strong>
+            <span>+380 (73) 456-78-90</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div class="contact-item-text">
+            <strong>Email</strong>
+            <span>hello@ecochef.tech</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🕐</div>
+          <div class="contact-item-text">
+            <strong>Години роботи</strong>
+            <span>Пн–Пт: 9:00 — 18:00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contacts-divider"></div>
+      <div class="social-links">
+        <a href="#" class="social-link">ig</a>
+        <a href="#" class="social-link">tg</a>
+        <a href="#" class="social-link">li</a>
+      </div>
+    </div>
+
+    <!-- RIGHT: FORM -->
+    <div class="contacts-form-panel">
+      <div class="form-header">
+        <div class="section-label">Написати нам</div>
+        <h2>Форма зв'язку</h2>
+        <p>Заповніть форму — відповімо протягом одного робочого дня.</p>
+      </div>
+
+      <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Ім'я</label>
+            <input type="text" id="name" name="name" placeholder="Іван" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="ivan@email.com" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="favorite">Улюблена страва</label>
+          <input type="text" id="favorite" name="favorite" placeholder="Борщ, паста, омлет...">
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Тема</label>
+          <select id="subject" name="subject">
+            <option value="">Оберіть тему...</option>
+            <option>Загальне запитання</option>
+            <option>Технічна підтримка</option>
+            <option>Партнерство</option>
+            <option>Вакансії</option>
+            <option>Інше</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Повідомлення</label>
+          <textarea id="message" name="message" rows="5" placeholder="Ваше повідомлення..." required></textarea>
+        </div>
+
+        <div class="form-submit-row">
+          <button type="submit" class="btn btn-primary">Надіслати повідомлення</button>
+        </div>
+
+      </form>
+
+      <div class="form-success" id="formSuccess">
+        <p>✓ Дякуємо! Повідомлення отримано. Відповімо найближчим часом.</p>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <span class="footer-logo">Eco<span>Chef</span></span>
+  <p>© 2025 EcoChef. Готуй смачно. Не викидай зайвого.</p>
+</footer>
+
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    const form = document.getElementById('contactForm');
+    const success = document.getElementById('formSuccess');
+    form.style.opacity = '0.4';
+    form.style.pointerEvents = 'none';
+    setTimeout(() => {
+      form.style.display = 'none';
+      success.style.display = 'block';
+    }, 400);
+  }
+</script>
+
+</body>
+</html>

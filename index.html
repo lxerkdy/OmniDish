@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoChef — Готуй смачно. Не викидай зайвого.</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 0;
+      background: var(--cream);
+      padding-top: 64px;
+    }
+
+    .hero-content {
+      padding: 96px 48px 96px 80px;
+    }
+
+    .hero-visual {
+      height: 100vh;
+      background: var(--cream-dark);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-visual-inner {
+      width: 320px;
+      height: 320px;
+      border: 2px solid var(--border);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--white);
+    }
+
+    .hero-visual-inner::before {
+      content: 'LOGO';
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      letter-spacing: 0.2em;
+    }
+
+    .hero-visual-accent {
+      position: absolute;
+      bottom: 80px; right: 80px;
+      width: 160px; height: 160px;
+      background: var(--orange);
+      opacity: 0.08;
+    }
+
+    .hero-visual-accent2 {
+      position: absolute;
+      top: 80px; left: 80px;
+      width: 80px; height: 80px;
+      background: var(--green);
+      opacity: 0.12;
+    }
+
+    .hero h1 { margin-bottom: 24px; }
+    .hero h1 em { color: var(--orange); font-style: normal; }
+    .hero p.lead {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 40px;
+      color: var(--text-muted);
+      max-width: 440px;
+    }
+
+    .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    /* STATS STRIP */
+    .stats-strip {
+      background: var(--text);
+      padding: 48px 80px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 0 40px;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .stat-item:last-child { border-right: none; }
+    .stat-item .stat-number { display: block; margin-bottom: 8px; }
+    .stat-item p { color: rgba(250,247,242,0.45); font-size: 0.875rem; }
+
+    /* FEATURES */
+    .features-header { margin-bottom: 64px; max-width: 560px; }
+
+    .feature-card .icon-box { background: var(--cream-dark); }
+    .feature-card h3 { margin-bottom: 12px; }
+    .feature-card p { font-size: 0.925rem; }
+
+    /* HOW IT WORKS */
+    .how-section {
+      background: var(--cream-dark);
+      padding: 96px 80px;
+    }
+
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 64px; }
+
+    .step {
+      padding: 40px;
+      border-right: 1px solid var(--border);
+      position: relative;
+    }
+
+    .step:last-child { border-right: none; }
+
+    .step-number {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      font-weight: 600;
+      color: var(--cream);
+      line-height: 1;
+      margin-bottom: 24px;
+      -webkit-text-stroke: 1.5px var(--border);
+    }
+
+    .step h3 { margin-bottom: 12px; }
+
+    /* CTA BANNER */
+    .cta-banner {
+      background: var(--orange);
+      padding: 80px;
+      text-align: center;
+    }
+
+    .cta-banner h2 { color: var(--white); margin-bottom: 16px; }
+    .cta-banner p { color: rgba(255,255,255,0.75); margin-bottom: 40px; font-size: 1.05rem; }
+
+    .btn-white {
+      background: var(--white);
+      color: var(--orange);
+    }
+
+    .btn-white:hover {
+      background: var(--cream);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .hero-content { padding: 64px 24px; }
+      .stats-strip { grid-template-columns: 1fr; padding: 48px 24px; gap: 32px; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 32px; }
+      .stat-item:last-child { border-bottom: none; }
+      .how-section { padding: 64px 24px; }
+      .steps { grid-template-columns: 1fr; }
+      .step { border-right: none; border-bottom: 1px solid var(--border); }
+      .cta-banner { padding: 64px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Eco<span>Chef</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Головна</a></li>
+    <li><a href="about.html">Про нас</a></li>
+    <li><a href="services.html">Послуги</a></li>
+    <li><a href="contacts.html">Контакти</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="section-label fade-up">FoodTech · AI-Powered</div>
+      <h1 class="fade-up-delay-1">Твій персональний <em>ШІ-кухар</em></h1>
+      <p class="lead fade-up-delay-2">
+        Сфотографуй вміст холодильника — отримай рецепти.
+        Менше відходів, менше витрат, більше смаку.
+      </p>
+      <div class="hero-cta fade-up-delay-3">
+        <a href="services.html" class="btn btn-primary">Наші послуги</a>
+        <a href="about.html" class="btn btn-outline">Про проєкт</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-visual-accent"></div>
+      <div class="hero-visual-accent2"></div>
+      <div class="hero-visual-inner"></div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-strip">
+    <div class="stat-item">
+      <span class="stat-number">30%</span>
+      <p>Мета скорочення харчових відходів</p>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">500+</span>
+      <p>Рецептів у базі алгоритму</p>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">2025</span>
+      <p>Рік заснування проєкту</p>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section class="section">
+    <div class="features-header">
+      <div class="section-label">Можливості</div>
+      <h2>Все що потрібно для розумного готування</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="grid-3">
+      <div class="card feature-card fade-up">
+        <div class="icon-box">📸</div>
+        <h3>Фото — рецепт</h3>
+        <p>Сфотографуй продукти, ШІ миттєво розпізнає їх і згенерує страву. Підтримка поганого освітлення.</p>
+      </div>
+      <div class="card feature-card fade-up-delay-1">
+        <div class="icon-box">⏱</div>
+        <h3>Термін придатності</h3>
+        <p>Автоматичні нагадування про продукти, що скоро зіпсуються. Жодного викинутого йогурту.</p>
+      </div>
+      <div class="card feature-card fade-up-delay-2">
+        <div class="icon-box">🛒</div>
+        <h3>Розумний список</h3>
+        <p>Аналіз звичок та формування списку покупок лише з тих інгредієнтів, яких вам дійсно бракує.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <div class="how-section">
+    <div class="section" style="padding: 0; max-width: 1200px; margin: 0 auto;">
+      <div class="section-label">Як це працює</div>
+      <h2>Три кроки до страви</h2>
+    </div>
+    <div class="steps" style="max-width: 1200px; margin: 64px auto 0;">
+      <div class="step">
+        <div class="step-number">01</div>
+        <h3>Фотографуй</h3>
+        <p>Відкрий додаток і сфотографуй вміст холодильника або окремі продукти.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">02</div>
+        <h3>Отримуй рецепти</h3>
+        <p>ШІ аналізує фото, визначає продукти і пропонує кілька страв різного рівня складності.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">03</div>
+        <h3>Готуй та економ</h3>
+        <p>Слідуй покрокам і готуй без відходів. Зберігай улюблені рецепти у профілі.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <h2>Готовий спробувати?</h2>
+    <p>Приєднуйся до тих, хто готує розумно</p>
+    <a href="contacts.html" class="btn btn-white btn-primary">Зв'язатись з нами</a>
+  </div>
+
+</main>
+
+<footer>
+  <span class="footer-logo">Eco<span>Chef</span></span>
+  <p>© 2025 EcoChef. Готуй смачно. Не викидай зайвого.</p>
+</footer>
+
+</body>
+</html>
